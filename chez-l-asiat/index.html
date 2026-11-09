@@ -206,7 +206,7 @@ function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.remo
  err.textContent=m;return !m}
 f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
  const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Envoi en cours…';
- const fd=new FormData(f);fd.append('slug',C.slug);fd.append('restaurant',C.nom);fd.append('resto_tel',C.tel||'');fd.append('page',location.href);
+ const fd=new FormData(f);fd.append('slug',C.slug);fd.append('resto_tel',C.tel||'');
  let res={ok:true,demo:true};
  try{if(C.ep){const rq=await fetch(C.ep,{method:'POST',body:new URLSearchParams(fd)});res=await rq.json()}else await new Promise(r=>setTimeout(r,700))}
  catch(x){res={ok:false,error:'Connexion impossible. Réessayez ou appelez le restaurant.'}}
@@ -216,7 +216,7 @@ f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
  const n=fd.get('couverts'),appel=fd.get('pref')==='appel';
  ok.innerHTML='<div class="big">✅</div><h3>Demande envoyée !</h3><p><b>'+n+' personne'+(n>1?'s':'')+'</b>, '+d+' à <b>'+fd.get('heure')+'</b>.</p><p>'+
   (appel?'Le restaurant va vous rappeler au '+fd.get('tel')+' pour confirmer.':'Un email de confirmation vous sera envoyé à '+fd.get('email').replace(/</g,'')+' dès que le restaurant aura validé.')+'</p>'+
-  (C.ep?'':'<p class="opt" style="margin-top:14px">Maquette : formulaire en mode démonstration, aucune notification n’a été envoyée.</p>');
+  (!res.demo?'':'<p class="opt" style="margin-top:14px">Maquette de démonstration : cette demande n’est pas transmise au restaurant. Pour réserver, appelez-le directement.</p>');
  f.hidden=true;ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'})});
 })();
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
