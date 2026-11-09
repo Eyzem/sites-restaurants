@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Terrasse d&#x27;Angkor – Restaurant cambodgien à Villeurbanne</title>
+<meta name="description" content="Cuisine cambodgienne familiale, comme là-bas, à deux pas du métro Cusset.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f2ec;--surf:#ffffff;--txt:#1b1b1b;--acc:#c0392b;--acc2:#2f4858;--muted:#6b625a;--line:#e8e1d8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Shippori Mincho',Georgia,serif;line-height:1.1;font-weight:700}
+a{color:inherit}
+.demo{background:#111;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo b{color:#ffd166}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(16px,5vw,64px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:'Shippori Mincho',serif;font-size:22px;font-weight:700;text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
+nav ul a{text-decoration:none;opacity:.8} nav ul a:hover{opacity:1;color:var(--acc)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--acc)}
+.btn-p{background:var(--acc);color:#fff}
+.btn-g{border:2px solid #fff;color:#fff}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:radial-gradient(1200px 600px at 20% 10%,#c0392b33,transparent),linear-gradient(135deg,#2f4858,#c0392b);color:#fff}
+.hero .kicker{letter-spacing:.25em;text-transform:uppercase;font-size:13px;opacity:.9;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,9vw,104px);margin-bottom:18px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero p.slogan{font-size:clamp(18px,2.4vw,24px);max-width:680px;margin:0 auto 32px;opacity:.95}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;margin-top:28px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);text-decoration:none;font-size:15px}
+.bstars,.rstars{color:#ffc93c;letter-spacing:2px}
+section{padding:clamp(64px,10vw,120px) clamp(16px,5vw,64px)}
+.wrap{max-width:1100px;margin:0 auto}
+.eyebrow{color:var(--acc);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;margin-bottom:12px}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:24px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about p{font-size:18px;color:var(--muted);margin-bottom:16px}
+.about ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.about li{border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:14px}
+.about .pic{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.menu{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:20px}
+.dish{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--bg);transition:transform .2s,border-color .2s}
+.dish:hover{transform:translateY(-4px);border-color:var(--acc)}
+.dish-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px}
+.dish h3{font-size:22px} .price{color:var(--acc);font-weight:700;white-space:nowrap}
+.dish p{color:var(--muted);font-size:15px}
+.note{margin-top:22px;color:var(--muted);font-size:14px;font-style:italic}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:40px}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.review{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:28px}
+.review blockquote{font-size:17px;margin:12px 0;font-style:italic}
+.review figcaption{color:var(--muted);font-size:14px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:32px}
+table{width:100%;border-collapse:collapse} th,td{padding:10px 0;border-bottom:1px solid var(--line);text-align:left} td{text-align:right;color:var(--muted)}
+.contact p{margin-bottom:10px;font-size:17px}
+.contact .btn{margin-top:14px;margin-right:8px}
+iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:20px;filter:none}
+footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.fab{display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:30;justify-content:center;background:var(--acc);color:#fff;padding:16px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}
+@media(max-width:820px){nav ul{display:none}.about,.info{grid-template-columns:1fr}.about .pic{aspect-ratio:16/10}.fab{display:flex}}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration <b>non officielle</b> proposée à Terrasse d&#x27;Angkor par Eyzem.</div>
+<nav><a class="logo" href="#">Terrasse d&#x27;Angkor</a>
+<ul><li><a href="#histoire">Notre maison</a></li><li><a href="#carte">La carte</a></li><li><a href="#avis">Avis</a></li><li><a href="#infos">Infos & accès</a></li></ul>
+<a class="btn btn-p" href="tel:0478849341">Réserver</a></nav>
+
+<header class="hero"><div>
+<div class="kicker">Restaurant cambodgien · Villeurbanne</div>
+<h1>Terrasse d&#x27;Angkor</h1>
+<p class="slogan">Cuisine cambodgienne familiale, comme là-bas, à deux pas du métro Cusset.</p>
+<div class="ctas"><a class="btn btn-p" href="tel:0478849341">📞 Appeler / Réserver</a>
+<a class="btn btn-g" href="https://www.google.com/maps/place/?q=place_id:ChIJe7YFp07A9EcRYI4Y9LcViJ0" target="_blank" rel="noopener">📍 Itinéraire</a></div>
+<a class="badge" href="https://www.google.com/maps/place/?q=place_id:ChIJe7YFp07A9EcRYI4Y9LcViJ0" target="_blank" rel="noopener"><span class="bstars">★★★★☆</span> 4.5/5 · 71 avis Google</a>
+</div></header>
+
+<section id="histoire"><div class="wrap about reveal">
+<div><div class="eyebrow">Notre maison</div><h2>On mange comme à la maison</h2>
+<p>À la Terrasse d&#x27;Angkor, famille et cuisine se mélangent. Des plats d&#x27;Asie du Sud-Est pleins de goût, servis copieusement et sans chichi.</p><p>Une adresse conviviale, un patron sympa, et un service rapide.</p>
+<ul><li>Sur place</li><li>À emporter</li><li>Près du métro Cusset</li></ul></div>
+<div class="pic" role="img" aria-label="Terrasse d&#x27;Angkor"></div>
+</div></section>
+
+<section id="carte" class="menu"><div class="wrap reveal">
+<div class="eyebrow">La carte</div><h2>Nos incontournables</h2>
+<div class="dishes"><article class="dish"><div class="dish-top"><h3>Bo bun</h3></div><p>Servi très copieusement, un best-seller.</p></article><article class="dish"><div class="dish-top"><h3>Rouleaux de printemps</h3></div><p>Frais et croquants, chaudement recommandés.</p></article><article class="dish"><div class="dish-top"><h3>Nems &amp; samoussas</h3></div><p>Pour accompagner l&#x27;apéritif.</p></article><article class="dish"><div class="dish-top"><h3>Plats cambodgiens</h3></div><p>Recettes familiales pleines de saveurs.</p></article></div>
+<p class="note">Aperçu de nos plats : la carte complète et les prix seront bientôt en ligne.</p>
+
+</div></section>
+
+<section id="avis"><div class="wrap reveal"><div class="eyebrow">Ils en parlent</div><h2>Ce que disent nos clients</h2><div class="reviews"><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Je mange comme à la maison ! »</blockquote><figcaption>— Avis Google</figcaption></figure><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Petit restaurant convivial et sans chichi où l&#x27;on mange comme là-bas. »</blockquote><figcaption>— Avis Google</figcaption></figure></div></div></section>
+
+<section id="infos" class="menu"><div class="wrap info reveal">
+<div class="card contact"><div class="eyebrow">Infos & accès</div><h2 style="font-size:36px">Venez nous voir</h2>
+<p>📍 262 Rue du 4 Août 1789, 69100 Villeurbanne</p><p>📞 <a href="tel:0478849341">04 78 84 93 41</a></p>
+
+<table><tr><th>Lundi</th><td>07:00–22:00</td></tr><tr><th>Mardi</th><td>07:00–22:00</td></tr><tr><th>Mercredi</th><td>07:00–22:00</td></tr><tr><th>Jeudi</th><td>07:00–22:00</td></tr><tr><th>Vendredi</th><td>07:00–22:00</td></tr><tr><th>Samedi</th><td>07:00–22:00</td></tr><tr><th>Dimanche</th><td>Fermé</td></tr></table>
+<a class="btn btn-p" href="tel:0478849341">Appeler</a><a class="btn btn-p" style="background:var(--acc2)" href="https://www.google.com/maps/place/?q=place_id:ChIJe7YFp07A9EcRYI4Y9LcViJ0" target="_blank" rel="noopener">Itinéraire</a>
+</div>
+<iframe loading="lazy" src="https://www.google.com/maps?q=Terrasse%20d%27Angkor%20262%20Rue%20du%204%20Ao%C3%BBt%201789%2C%2069100%20Villeurbanne&amp;output=embed" title="Plan d'accès Terrasse d&#x27;Angkor"></iframe>
+</div></section>
+
+<footer>© Terrasse d&#x27;Angkor · 262 Rue du 4 Août 1789, 69100 Villeurbanne<br>Site réalisé par Eyzem</footer>
+<a class="fab" href="tel:0478849341">📞 Appeler Terrasse d&#x27;Angkor</a>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>
