@@ -77,6 +77,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 .resa-tel a{color:var(--acc);font-weight:700;text-decoration:none}
 .resa-form{display:grid;gap:14px}
 .resa-form label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.resa,.resa>*{min-width:0} .resa-intro p{overflow-wrap:anywhere}
 .resa-form input,.resa-form select,.resa-form textarea{font:inherit;font-weight:400;color:var(--txt);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
 .resa-form input:focus,.resa-form select:focus,.resa-form textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
 .resa-form [aria-invalid=true]{border-color:#d92d20}
@@ -146,7 +147,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <fieldset><legend>Je souhaite être confirmé(e)</legend>
 <label class="rad"><input type="radio" name="pref" value="email" checked> par email</label>
 <label class="rad"><input type="radio" name="pref" value="appel"> par téléphone (le restaurant me rappelle)</label></fieldset>
-<label>Message <span class="opt">(facultatif)</span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
+<label><span>Message <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
 <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma réservation.</label>
 <p class="resa-err" id="rErr" role="alert"></p>
