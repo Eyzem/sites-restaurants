@@ -141,10 +141,8 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <label>Nombre de personnes<select name="couverts"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option><option value="9">9 personnes</option><option value="10">10 personnes</option><option value="11">11 personnes</option><option value="12">12 personnes</option></select></label>
 <div class="g2">
 <label>Nom<input name="nom" autocomplete="name" required minlength="2" maxlength="80" placeholder="Votre nom"></label>
-<label>Téléphone<input name="tel" type="tel" autocomplete="tel" required placeholder="06 12 34 56 78"></label>
-</div>
 <label>Email<input name="email" id="rEmail" type="email" required autocomplete="email" maxlength="120" placeholder="vous@exemple.fr"></label>
-<input type="hidden" name="pref" value="email">
+</div>
 <label><span>Message <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
 <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma réservation.</label>
@@ -196,7 +194,6 @@ function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.remo
  if(!dI.value||dI.value<dI.min||dI.value>dI.max)bad(dI,'Choisissez une date dans les 60 prochains jours.');
  if(!hS.value)bad(hS,'Aucun créneau ce jour-là : choisissez une autre date.');
  if(f.nom.value.trim().length<2)bad(f.nom,'Indiquez votre nom.');
- const t=f.tel.value.replace(/[^\d+]/g,'');if(!/^(\+33|0)[1-9]\d{8}$/.test(t)&&!/^\+\d{8,15}$/.test(t))bad(f.tel,'Numéro de téléphone invalide.');
  if(eI.value&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(eI.value))bad(eI,'Adresse email invalide.');
  if(!eI.value)bad(eI,'Indiquez votre email pour recevoir la confirmation.');
  if(!f.rgpd.checked)bad(f.rgpd,'Merci de cocher la case d’accord.');
