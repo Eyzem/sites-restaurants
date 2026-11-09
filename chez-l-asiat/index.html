@@ -156,7 +156,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 </form>
 <div class="resa-ok card" id="resaOk" hidden></div>
 </div></div></section>
-<script>window.RESA={"ep": "https://script.google.com/macros/s/AKfycbxfPukltYJF_Qsuhbf5tFT7mpFeLofq9YSpQkK-0NPPo5fj900ZNcvMVuAxiyfKCss-/exec", "slug": "chez-l-asiat", "nom": "Chez l'Asiat", "h": {"1": [[690, 840], [1110, 1320]], "2": [[690, 840], [1110, 1320]], "3": [[690, 840], [1110, 1320]], "4": [[690, 840], [1110, 1320]], "5": [[690, 840], [1110, 1320]], "6": [[690, 840], [1110, 1320]], "0": []}};</script>
+<script>window.RESA={"ep": "https://script.google.com/macros/s/AKfycbxfPukltYJF_Qsuhbf5tFT7mpFeLofq9YSpQkK-0NPPo5fj900ZNcvMVuAxiyfKCss-/exec", "slug": "chez-l-asiat", "nom": "Chez l'Asiat", "tel": "04 37 72 91 05", "h": {"1": [[690, 840], [1110, 1320]], "2": [[690, 840], [1110, 1320]], "3": [[690, 840], [1110, 1320]], "4": [[690, 840], [1110, 1320]], "5": [[690, 840], [1110, 1320]], "6": [[690, 840], [1110, 1320]], "0": []}};</script>
 
 <section id="infos" class="menu"><div class="wrap info reveal">
 <div class="card contact"><div class="eyebrow">Infos & accès</div><h2 style="font-size:36px">Venez nous voir</h2>
@@ -206,7 +206,7 @@ function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.remo
  err.textContent=m;return !m}
 f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
  const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Envoi en cours…';
- const fd=new FormData(f);fd.append('slug',C.slug);fd.append('restaurant',C.nom);fd.append('page',location.href);
+ const fd=new FormData(f);fd.append('slug',C.slug);fd.append('restaurant',C.nom);fd.append('resto_tel',C.tel||'');fd.append('page',location.href);
  let res={ok:true,demo:true};
  try{if(C.ep){const rq=await fetch(C.ep,{method:'POST',body:new URLSearchParams(fd)});res=await rq.json()}else await new Promise(r=>setTimeout(r,700))}
  catch(x){res={ok:false,error:'Connexion impossible. Réessayez ou appelez le restaurant.'}}
