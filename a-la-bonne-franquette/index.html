@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f1ea;--surf:#fffdf9;--txt:#1f1a17;--acc:#7a2e3a;--acc2:#b08d57;--muted:#6b625a;--line:#e8e1d8;--on-acc:#fff}
+:root{--bg:#f7f2ec;--surf:#ffffff;--txt:#2a1a1c;--acc:#8e2433;--acc2:#c23b32;--muted:#6b625a;--line:#e8e1d8;--on-acc:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -18,14 +18,16 @@ a{color:inherit}
 .demo{background:#111;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
 .demo b{color:#ffd166}
 nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(16px,5vw,64px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;text-decoration:none}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px}
+nav .logo img{height:40px;width:40px;object-fit:cover;border-radius:50%}
+.hero h1.logotype{font-family:'Cormorant Garamond',serif;font-weight:400}
 nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
 nav ul a{text-decoration:none;opacity:.8} nav ul a:hover{opacity:1;color:var(--acc)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--acc)}
 .btn-p{background:var(--acc);color:var(--on-acc)}
 .btn-g{border:2px solid #fff;color:#fff}
-.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:radial-gradient(1200px 600px at 20% 10%,#7a2e3a33,transparent),linear-gradient(135deg,#b08d57,#7a2e3a);color:#fff}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.7)),url('img/05.jpg') center 40%/cover;color:#fff}
 .hero .kicker{letter-spacing:.25em;text-transform:uppercase;font-size:13px;opacity:.9;margin-bottom:18px}
 .hero h1{font-size:clamp(44px,9vw,104px);margin-bottom:18px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .hero p.slogan{font-size:clamp(18px,2.4vw,24px);max-width:680px;margin:0 auto 32px;opacity:.95}
@@ -40,7 +42,7 @@ h2{font-size:clamp(34px,5vw,56px);margin-bottom:24px}
 .about p{font-size:18px;color:var(--muted);margin-bottom:16px}
 .about ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .about li{border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:14px}
-.about .pic{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.about .pic{aspect-ratio:4/5;border-radius:24px;background:url('img/01.jpg') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
 .menu{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .dishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:20px}
 .dish{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--bg);transition:transform .2s,border-color .2s}
@@ -49,8 +51,14 @@ h2{font-size:clamp(34px,5vw,56px);margin-bottom:24px}
 .dish h3{font-size:22px} .price{color:var(--acc);font-weight:700;white-space:nowrap}
 .dish p{color:var(--muted);font-size:15px}
 .note{margin-top:22px;color:var(--muted);font-size:14px;font-style:italic}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:40px}
-.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
+.gallery .gi{display:block;overflow:hidden;border-radius:14px}
+.gallery .gi:nth-child(1),.gallery .gi:nth-child(6){grid-column:span 2;grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery .gi:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.9);display:none;place-items:center;padding:20px;cursor:zoom-out}
+.lb.on{display:grid} .lb img{max-width:100%;max-height:90vh;border-radius:12px}
+.credit{margin-top:14px;font-size:12px;color:var(--muted)}
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
 .review{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:28px}
 .review blockquote{font-size:17px;margin:12px 0;font-style:italic}
@@ -64,13 +72,13 @@ iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:20px;filte
 footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 .fab{display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:30;justify-content:center;background:var(--acc);color:var(--on-acc);padding:16px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}
-@media(max-width:820px){nav ul{display:none}.about,.info{grid-template-columns:1fr}.about .pic{aspect-ratio:16/10}.fab{display:flex}}
+@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}nav ul{display:none}.about,.info{grid-template-columns:1fr}.about .pic{aspect-ratio:16/10}.fab{display:flex}}
 </style>
 </head>
 <body>
 <div class="demo">Maquette de démonstration <b>non officielle</b> proposée à À la bonne franquette par Eyzem.</div>
 <nav><a class="logo" href="#">À la bonne franquette</a>
-<ul><li><a href="#histoire">Notre maison</a></li><li><a href="#carte">La carte</a></li><li><a href="#avis">Avis</a></li><li><a href="#infos">Infos & accès</a></li></ul>
+<ul><li><a href="#histoire">Notre maison</a></li><li><a href="#carte">La carte</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#avis">Avis</a></li><li><a href="#infos">Infos & accès</a></li></ul>
 <a class="btn btn-p" href="tel:0478899450">Réserver</a></nav>
 
 <header class="hero"><div>
@@ -93,8 +101,9 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <div class="eyebrow">La carte</div><h2>Nos incontournables</h2>
 <div class="dishes"><article class="dish"><div class="dish-top"><h3>Plat du jour</h3></div><p>Produits frais, cuisinés le matin même.</p></article><article class="dish"><div class="dish-top"><h3>Entrée + plat ou plat + dessert</h3></div><p>La formule des habitués.</p></article><article class="dish"><div class="dish-top"><h3>Desserts maison</h3></div><p>Pour les gourmands.</p></article><article class="dish"><div class="dish-top"><h3>Café &amp; viennoiseries</h3></div><p>Dès 7 h 30.</p></article></div>
 <p class="note">Aperçu de nos plats : la carte complète et les prix seront bientôt en ligne.</p>
-
 </div></section>
+
+<section id="galerie"><div class="wrap reveal"><div class="eyebrow">En images</div><h2>Bienvenue chez nous</h2><div class="gallery"><a href="img/02.jpg" class="gi"><img loading="lazy" src="img/02.jpg" alt="À la bonne franquette – photo 1"></a><a href="img/07.jpg" class="gi"><img loading="lazy" src="img/07.jpg" alt="À la bonne franquette – photo 2"></a><a href="img/08.jpg" class="gi"><img loading="lazy" src="img/08.jpg" alt="À la bonne franquette – photo 3"></a><a href="img/10.jpg" class="gi"><img loading="lazy" src="img/10.jpg" alt="À la bonne franquette – photo 4"></a><a href="img/04.jpg" class="gi"><img loading="lazy" src="img/04.jpg" alt="À la bonne franquette – photo 5"></a><a href="img/09.jpg" class="gi"><img loading="lazy" src="img/09.jpg" alt="À la bonne franquette – photo 6"></a><a href="img/06.jpg" class="gi"><img loading="lazy" src="img/06.jpg" alt="À la bonne franquette – photo 7"></a><a href="img/03.jpg" class="gi"><img loading="lazy" src="img/03.jpg" alt="À la bonne franquette – photo 8"></a></div><p class="credit">Photos issues de la fiche Google de À la bonne franquette.</p></div></section>
 
 <section id="avis"><div class="wrap reveal"><div class="eyebrow">Ils en parlent</div><h2>Ce que disent nos clients</h2><div class="reviews"><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Des plats savoureux, fait maison, et un service avec le sourire. »</blockquote><figcaption>— Avis Google</figcaption></figure><figure class="review"><div class="rstars">★★★★★</div><blockquote>« On arrive ici et on se sent de suite bien. »</blockquote><figcaption>— Avis Google</figcaption></figure></div></div></section>
 
@@ -110,7 +119,11 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 
 <footer>© À la bonne franquette · 11 Rue Marteret, 69100 Villeurbanne<br>Site réalisé par Eyzem</footer>
 <a class="fab" href="tel:0478899450">📞 Appeler À la bonne franquette</a>
+<div class="lb" id="lb"><img alt=""></div>
 <script>
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gi').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();lb.querySelector('img').src=a.getAttribute('href');lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
