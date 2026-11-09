@@ -130,7 +130,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <section id="reserver"><div class="wrap reveal">
 <div class="resa">
 <div class="resa-intro"><div class="eyebrow">Réservation</div><h2>Réservez votre table</h2>
-<p>Choisissez votre créneau en quelques secondes. Le restaurant reçoit votre demande immédiatement et vous confirme <b>par email ou par téléphone</b>, comme vous préférez.</p>
+<p>Choisissez votre créneau en quelques secondes. Le restaurant reçoit votre demande immédiatement et vous confirme votre table <b>par email</b>.</p>
 <ul class="resa-pts"><li>✓ Uniquement les créneaux d'ouverture</li><li>✓ Confirmation rapide</li><li>✓ Gratuit, sans compte</li></ul>
 <p class="resa-tel">Une question ? <a href="tel:0469673104">📞 04 69 67 31 04</a></p></div>
 <form class="resa-form card" id="resaForm" novalidate>
@@ -143,10 +143,8 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <label>Nom<input name="nom" autocomplete="name" required minlength="2" maxlength="80" placeholder="Votre nom"></label>
 <label>Téléphone<input name="tel" type="tel" autocomplete="tel" required placeholder="06 12 34 56 78"></label>
 </div>
-<label>Email<input name="email" id="rEmail" type="email" autocomplete="email" maxlength="120" placeholder="vous@exemple.fr"></label>
-<fieldset><legend>Je souhaite être confirmé(e)</legend>
-<label class="rad"><input type="radio" name="pref" value="email" checked> par email</label>
-<label class="rad"><input type="radio" name="pref" value="appel"> par téléphone (le restaurant me rappelle)</label></fieldset>
+<label>Email<input name="email" id="rEmail" type="email" required autocomplete="email" maxlength="120" placeholder="vous@exemple.fr"></label>
+<input type="hidden" name="pref" value="email">
 <label><span>Message <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
 <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma réservation.</label>
@@ -193,7 +191,6 @@ function fill(){const v=dI.value;hS.innerHTML='';if(!v)return;const d=new Date(v
 const t0=new Date(),max=new Date();max.setDate(max.getDate()+60);dI.min=iso(t0);dI.max=iso(max);
 for(let i=0;i<14;i++){const d=new Date();d.setDate(d.getDate()+i);if(slots(d).length){dI.value=iso(d);break}}
 fill();dI.addEventListener('change',fill);
-const syncMail=()=>{eI.required=f.pref.value==='email'};f.querySelectorAll('[name=pref]').forEach(x=>x.addEventListener('change',syncMail));syncMail();
 function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
  const bad=(el,msg)=>{el.setAttribute('aria-invalid','true');if(!m){m=msg;el.focus()}};
  if(!dI.value||dI.value<dI.min||dI.value>dI.max)bad(dI,'Choisissez une date dans les 60 prochains jours.');
@@ -201,7 +198,7 @@ function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.remo
  if(f.nom.value.trim().length<2)bad(f.nom,'Indiquez votre nom.');
  const t=f.tel.value.replace(/[^\d+]/g,'');if(!/^(\+33|0)[1-9]\d{8}$/.test(t)&&!/^\+\d{8,15}$/.test(t))bad(f.tel,'Numéro de téléphone invalide.');
  if(eI.value&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(eI.value))bad(eI,'Adresse email invalide.');
- if(eI.required&&!eI.value)bad(eI,'Indiquez votre email pour recevoir la confirmation (ou choisissez « par téléphone »).');
+ if(!eI.value)bad(eI,'Indiquez votre email pour recevoir la confirmation.');
  if(!f.rgpd.checked)bad(f.rgpd,'Merci de cocher la case d’accord.');
  err.textContent=m;return !m}
 f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
@@ -213,9 +210,9 @@ f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
  b.disabled=false;b.textContent='Envoyer ma demande de réservation';
  if(!res.ok){err.textContent=res.error||'Erreur, réessayez.';return}
  const d=new Date(fd.get('date')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
- const n=fd.get('couverts'),appel=fd.get('pref')==='appel';
+ const n=fd.get('couverts');
  ok.innerHTML='<div class="big">✅</div><h3>Demande envoyée !</h3><p><b>'+n+' personne'+(n>1?'s':'')+'</b>, '+d+' à <b>'+fd.get('heure')+'</b>.</p><p>'+
-  (appel?'Le restaurant va vous rappeler au '+fd.get('tel')+' pour confirmer.':'Un email de confirmation vous sera envoyé à '+fd.get('email').replace(/</g,'')+' dès que le restaurant aura validé.')+'</p>'+
+  'Un email de confirmation vous sera envoyé à '+fd.get('email').replace(/</g,'')+' dès que le restaurant aura validé.'+'</p>'+
   (!res.demo?'':'<p class="opt" style="margin-top:14px">Maquette de démonstration : cette demande n’est pas transmise au restaurant. Pour réserver, appelez-le directement.</p>');
  f.hidden=true;ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'})});
 })();

@@ -26,7 +26,7 @@ Maquettes de sites vitrines réalisées par **Eyzem** pour des restaurants qui n
 ## ✨ Ce que contient chaque site
 
 - **Identité visuelle du restaurant** : photos réelles de la fiche Google (devanture, salle, plats), couleurs et typographie inspirées de l'enseigne.
-- **Réservation en ligne** : formulaire avec uniquement les créneaux d'ouverture ; le restaurant est notifié par email (et SMS en option), le client reçoit un accusé de réception puis la confirmation par email ou est rappelé par téléphone.
+- **Réservation en ligne** : formulaire avec uniquement les créneaux d'ouverture ; le restaurant est notifié par email (et SMS en option), le client reçoit un accusé de réception puis la confirmation par email.
 - **Carte** des spécialités, **avis clients**, **galerie photo** avec agrandissement.
 - **Infos pratiques** : horaires, adresse, plan Google Maps intégré, boutons « Appeler » et « Itinéraire ».
 - **100 % mobile** : bouton de réservation flottant, chargement rapide, aucune dépendance.
