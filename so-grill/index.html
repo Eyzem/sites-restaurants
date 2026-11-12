@@ -86,6 +86,17 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 .resa-form .rad input{width:auto;accent-color:var(--acc)}
 .resa-form .small{font-size:13px;color:var(--muted)}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.resa-form [hidden]{display:none}
+.resa-form .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px} .resa-form .seg label{display:block;position:relative}
+.resa-form .seg input{position:absolute;opacity:0;width:1px;height:1px}
+.resa-form .seg span{display:block;text-align:center;padding:13px 8px;border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;background:var(--bg)}
+.resa-form .seg input:checked+span{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.resa-form .seg input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+.resa-form .cmd{border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px;gap:10px}
+.resa-form .cmd-it{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px}
+.resa-form .qty{display:flex;align-items:center;gap:6px;flex:none}
+.resa-form .qty input{width:52px;text-align:center;padding:8px 4px;-moz-appearance:textfield}
+.resa-form .qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surf);color:var(--txt);font-size:18px;line-height:1;cursor:pointer}
 .opt{font-weight:400;color:var(--muted);font-size:13px} .opt a{color:var(--acc)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .resa-err{color:#d92d20;font-size:14px;min-height:1px}
@@ -105,7 +116,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 <div class="kicker">Grill &amp; burgers halal · Villeurbanne</div>
 <h1 class="logotype">So Grill</h1>
 <p class="slogan">Burgers, grillades et milk-shakes halal. Produits frais, goût XXL.</p>
-<div class="ctas"><a class="btn btn-p" href="#reserver">Réserver une table</a><a class="btn btn-g" href="tel:0981883278">📞 Appeler</a>
+<div class="ctas"><a class="btn btn-p" href="#reserver">Réserver ou commander</a><a class="btn btn-g" href="tel:0981883278">📞 Appeler</a>
 <a class="btn btn-g" href="https://www.google.com/maps/place/?q=place_id:ChIJzyecJZvq9EcRYA5IfFU-VwE" target="_blank" rel="noopener">📍 Itinéraire</a></div>
 <a class="badge" href="https://www.google.com/maps/place/?q=place_id:ChIJzyecJZvq9EcRYA5IfFU-VwE" target="_blank" rel="noopener"><span class="bstars">★★★★★</span> 4.9/5 · 600 avis Google</a>
 </div></header>
@@ -129,25 +140,33 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 
 <section id="reserver"><div class="wrap reveal">
 <div class="resa">
-<div class="resa-intro"><div class="eyebrow">Réservation</div><h2>Réservez votre table</h2>
-<p>Choisissez votre créneau en quelques secondes. Le restaurant reçoit votre demande immédiatement et vous confirme votre table <b>par email</b>.</p>
-<ul class="resa-pts"><li>✓ Uniquement les créneaux d'ouverture</li><li>✓ Confirmation rapide</li><li>✓ Gratuit, sans compte</li></ul>
+<div class="resa-intro"><div class="eyebrow">Réservation &amp; commande</div><h2>Sur place ou à emporter</h2>
+<p>Choisissez votre créneau et vos plats : le restaurant reçoit aussitôt votre <b>ticket de commande</b> et vous confirme <b>par email</b>.</p>
+<ul class="resa-pts"><li>✓ Sur place ou à emporter</li><li>✓ Ticket envoyé directement au restaurant</li><li>✓ Uniquement les créneaux d'ouverture</li><li>✓ Gratuit, sans compte</li></ul>
 <p class="resa-tel">Une question ? <a href="tel:0981883278">📞 09 81 88 32 78</a></p></div>
 <form class="resa-form card" id="resaForm" novalidate>
+<div class="seg" role="radiogroup" aria-label="Sur place ou à emporter">
+<label><input type="radio" name="mode" value="place" checked><span>🍽️ Sur place</span></label>
+<label><input type="radio" name="mode" value="emporter"><span>🥡 À emporter</span></label>
+</div>
 <div class="g2">
 <label>Date<input type="date" name="date" id="rDate" required></label>
-<label>Heure<select name="heure" id="rHeure" required></select></label>
+<label id="rHeureL"><span>Heure</span><select name="heure" id="rHeure" required></select></label>
 </div>
-<label>Nombre de personnes<select name="couverts"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option><option value="9">9 personnes</option><option value="10">10 personnes</option><option value="11">11 personnes</option><option value="12">12 personnes</option></select></label>
+<label id="rCouv">Nombre de personnes<select name="couverts"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option><option value="9">9 personnes</option><option value="10">10 personnes</option><option value="11">11 personnes</option><option value="12">12 personnes</option></select></label>
+<fieldset class="cmd"><legend id="cmdLeg">Votre commande</legend>
+<div class="cmd-it"><span>Burgers maison</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Burgers maison">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Burgers maison" aria-label="Quantité Burgers maison"><button type="button" data-d="1" aria-label="Ajouter Burgers maison">+</button></div></div><div class="cmd-it"><span>Grillades</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Grillades">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Grillades" aria-label="Quantité Grillades"><button type="button" data-d="1" aria-label="Ajouter Grillades">+</button></div></div><div class="cmd-it"><span>Milk-shakes</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Milk-shakes">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Milk-shakes" aria-label="Quantité Milk-shakes"><button type="button" data-d="1" aria-label="Ajouter Milk-shakes">+</button></div></div><div class="cmd-it"><span>Desserts</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Desserts">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Desserts" aria-label="Quantité Desserts"><button type="button" data-d="1" aria-label="Ajouter Desserts">+</button></div></div>
+<label><span>Autre chose ? <span class="opt">(autres plats de la carte, boissons…)</span></span><textarea name="libre" rows="2" maxlength="400" placeholder="Ex. 2 menus du midi, 1 citronnade"></textarea></label>
+</fieldset>
 <div class="g2">
 <label>Nom<input name="nom" autocomplete="name" required minlength="2" maxlength="80" placeholder="Votre nom"></label>
 <label>Email<input name="email" id="rEmail" type="email" required autocomplete="email" maxlength="120" placeholder="vous@exemple.fr"></label>
 </div>
 <label><span>Message <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
 <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma réservation.</label>
+<label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma demande.</label>
 <p class="resa-err" id="rErr" role="alert"></p>
-<button class="btn btn-p resa-btn" type="submit">Envoyer ma demande de réservation</button>
+<button class="btn btn-p resa-btn" type="submit">Envoyer ma réservation</button>
 <p class="opt">Pour un groupe de plus de 12 personnes, <a href="tel:0981883278">appelez-nous</a>.</p>
 </form>
 <div class="resa-ok card" id="resaOk" hidden></div>
@@ -165,7 +184,7 @@ footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14
 </div></section>
 
 <footer>© So Grill · 54 Rue Gabriel Péri, 69100 Villeurbanne<br>Site réalisé par Eyzem</footer>
-<a class="fab" href="#reserver">Réserver une table</a>
+<a class="fab" href="#reserver">Réserver / Commander</a>
 <div class="lb" id="lb"><img alt=""></div>
 <script>
 const lb=document.getElementById('lb');
@@ -189,6 +208,15 @@ function fill(){const v=dI.value;hS.innerHTML='';if(!v)return;const d=new Date(v
 const t0=new Date(),max=new Date();max.setDate(max.getDate()+60);dI.min=iso(t0);dI.max=iso(max);
 for(let i=0;i<14;i++){const d=new Date();d.setDate(d.getDate()+i);if(slots(d).length){dI.value=iso(d);break}}
 fill();dI.addEventListener('change',fill);
+const cv=document.getElementById('rCouv'),leg=document.getElementById('cmdLeg'),hL=document.getElementById('rHeureL').firstChild,btn=f.querySelector('button[type=submit]');
+const emp=()=>f.mode.value==='emporter',lab=()=>emp()?'Envoyer ma commande':'Envoyer ma réservation';
+function sync(){const x=emp();cv.hidden=x;f.couverts.disabled=x;hL.textContent=x?'Heure de retrait':'Heure d’arrivée';btn.textContent=lab();
+ leg.innerHTML=x?'Votre commande':'Votre commande <span class="opt">(facultatif, préparée pour votre arrivée)</span>'}
+f.querySelectorAll('[name=mode]').forEach(x=>x.addEventListener('change',sync));sync();
+f.querySelectorAll('.qty button').forEach(b=>b.addEventListener('click',()=>{const i=b.parentNode.querySelector('input');i.value=Math.max(0,Math.min(20,(parseInt(i.value,10)||0)+ +b.dataset.d))}));
+function cmd(){const l=[];f.querySelectorAll('.qty input').forEach(i=>{const q=Math.max(0,Math.min(20,parseInt(i.value,10)||0));if(q)l.push(q+' × '+i.dataset.n)});
+ const t=f.libre.value.trim();if(t)l.push(t);return l.join('\n')}
+const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
  const bad=(el,msg)=>{el.setAttribute('aria-invalid','true');if(!m){m=msg;el.focus()}};
  if(!dI.value||dI.value<dI.min||dI.value>dI.max)bad(dI,'Choisissez une date dans les 60 prochains jours.');
@@ -196,20 +224,22 @@ function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.remo
  if(f.nom.value.trim().length<2)bad(f.nom,'Indiquez votre nom.');
  if(eI.value&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(eI.value))bad(eI,'Adresse email invalide.');
  if(!eI.value)bad(eI,'Indiquez votre email pour recevoir la confirmation.');
+ if(emp()&&!cmd())bad(f.libre,'Ajoutez au moins un plat à votre commande.');
  if(!f.rgpd.checked)bad(f.rgpd,'Merci de cocher la case d’accord.');
  err.textContent=m;return !m}
 f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
  const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Envoi en cours…';
- const fd=new FormData(f);fd.append('slug',C.slug);fd.append('resto_tel',C.tel||'');
+ const fd=new FormData(f);fd.delete('libre');fd.append('commande',cmd());fd.append('slug',C.slug);fd.append('resto_tel',C.tel||'');
  let res={ok:true,demo:true};
  try{if(C.ep){const rq=await fetch(C.ep,{method:'POST',body:new URLSearchParams(fd)});res=await rq.json()}else await new Promise(r=>setTimeout(r,700))}
  catch(x){res={ok:false,error:'Connexion impossible. Réessayez ou appelez le restaurant.'}}
- b.disabled=false;b.textContent='Envoyer ma demande de réservation';
+ b.disabled=false;b.textContent=lab();
  if(!res.ok){err.textContent=res.error||'Erreur, réessayez.';return}
  const d=new Date(fd.get('date')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
- const n=fd.get('couverts');
- ok.innerHTML='<div class="big">✅</div><h3>Demande envoyée !</h3><p><b>'+n+' personne'+(n>1?'s':'')+'</b>, '+d+' à <b>'+fd.get('heure')+'</b>.</p><p>'+
-  'Un email de confirmation vous sera envoyé à '+fd.get('email').replace(/</g,'')+' dès que le restaurant aura validé.'+'</p>'+
+ const n=fd.get('couverts'),c=fd.get('commande');
+ ok.innerHTML='<div class="big">✅</div><h3>'+(emp()?'Commande envoyée !':'Réservation envoyée !')+'</h3><p>'+(emp()?'<b>À emporter</b>, retrait ':'<b>Sur place, '+n+' personne'+(n>1?'s':'')+'</b>, ')+d+' à <b>'+fd.get('heure')+'</b>.</p>'+
+  (c?'<p style="white-space:pre-line">'+esc(c)+'</p>':'')+'<p>'+
+  'Un email de confirmation vous sera envoyé à '+esc(fd.get('email'))+' dès que le restaurant aura validé.'+'</p>'+
   (!res.demo?'':'<p class="opt" style="margin-top:14px">Maquette de démonstration : cette demande n’est pas transmise au restaurant. Pour réserver, appelez-le directement.</p>');
  f.hidden=true;ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'})});
 })();

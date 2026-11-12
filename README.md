@@ -4,7 +4,7 @@ Maquettes de sites vitrines réalisées par **Eyzem** pour des restaurants qui n
 
 > ⚠️ **Liens temporaires de démonstration.** Ces pages sont des maquettes **non officielles**, non indexées par les moteurs de recherche (`noindex`), présentées aux restaurateurs avant la mise en ligne de leur vrai site sur leur propre nom de domaine. Elles ne représentent pas les établissements et peuvent être retirées à tout moment, notamment sur simple demande du restaurant.
 
-**10 maquettes** · 10 à contacter · mise à jour le 9 novembre 2026
+**10 maquettes** · 10 à contacter · mise à jour le 12 novembre 2026
 
 ## 📋 Les restaurants
 
