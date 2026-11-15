@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Hash Burger – Burgers artisanaux à Villeurbanne</title>
+<meta name="description" content="Fresh is better : pain maison, sauces artisanales et produits locaux.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121212;--surf:#1d1d1d;--txt:#f4f1ea;--acc:#f2b705;--acc2:#e8e2d0;--muted:#b9b3aa;--line:#2c2c2e;--on-acc:#111}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bebas Neue',Georgia,serif;line-height:1.1;font-weight:700}
+a{color:inherit}
+.demo{background:#111;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo b{color:#ffd166}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(16px,5vw,64px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:'Bebas Neue',serif;font-size:24px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px}
+nav .logo img{height:40px;width:40px;object-fit:cover;border-radius:50%}
+.hero h1.logotype{font-family:'Bebas Neue',serif;font-weight:400}
+nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
+nav ul a{text-decoration:none;opacity:.8} nav ul a:hover{opacity:1;color:var(--acc)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--acc)}
+.btn-p{background:var(--acc);color:var(--on-acc)}
+.btn-g{border:2px solid #fff;color:#fff}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.7)),url('img/03.jpg') center 20%/cover;color:#fff}
+.hero .kicker{letter-spacing:.25em;text-transform:uppercase;font-size:13px;opacity:.9;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,9vw,104px);margin-bottom:18px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero p.slogan{font-size:clamp(18px,2.4vw,24px);max-width:680px;margin:0 auto 32px;opacity:.95}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;margin-top:28px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);text-decoration:none;font-size:15px}
+.bstars,.rstars{color:#ffc93c;letter-spacing:2px}
+section{padding:clamp(64px,10vw,120px) clamp(16px,5vw,64px)}
+.wrap{max-width:1100px;margin:0 auto}
+.eyebrow{color:var(--acc);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;margin-bottom:12px}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:24px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about p{font-size:18px;color:var(--muted);margin-bottom:16px}
+.about ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.about li{border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:14px}
+.about .pic{aspect-ratio:4/5;border-radius:24px;background:url('img/04.jpg') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.menu{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:20px}
+.dish{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--bg);transition:transform .2s,border-color .2s}
+.dish:hover{transform:translateY(-4px);border-color:var(--acc)}
+.dish-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px}
+.dish h3{font-size:22px} .price{color:var(--acc);font-weight:700;white-space:nowrap}
+.dish p{color:var(--muted);font-size:15px}
+.note{margin-top:22px;color:var(--muted);font-size:14px;font-style:italic}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
+.gallery .gi{display:block;overflow:hidden;border-radius:14px}
+.gallery .gi:nth-child(1),.gallery .gi:nth-child(6){grid-column:span 2;grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery .gi:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.9);display:none;place-items:center;padding:20px;cursor:zoom-out}
+.lb.on{display:grid} .lb img{max-width:100%;max-height:90vh;border-radius:12px}
+.credit{margin-top:14px;font-size:12px;color:var(--muted)}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.review{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:28px}
+.review blockquote{font-size:17px;margin:12px 0;font-style:italic}
+.review figcaption{color:var(--muted);font-size:14px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:32px}
+table{width:100%;border-collapse:collapse} th,td{padding:10px 0;border-bottom:1px solid var(--line);text-align:left} td{text-align:right;color:var(--muted)}
+.contact p{margin-bottom:10px;font-size:17px}
+.contact .btn{margin-top:14px;margin-right:8px}
+iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:20px;filter:invert(.9) hue-rotate(180deg)}
+footer{text-align:center;padding:40px 20px 100px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.fab{display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:30;justify-content:center;background:var(--acc);color:var(--on-acc);padding:16px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.resa{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.resa-intro p{color:var(--muted);font-size:17px;margin-bottom:14px}
+.resa-pts{list-style:none;margin:18px 0;display:grid;gap:8px;font-weight:500}
+.resa-tel a{color:var(--acc);font-weight:700;text-decoration:none}
+.resa-form{display:grid;gap:14px}
+.resa-form label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.resa,.resa>*{min-width:0} .resa-intro p{overflow-wrap:anywhere}
+.resa-form input,.resa-form select,.resa-form textarea{font:inherit;font-weight:400;color:var(--txt);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+.resa-form input:focus,.resa-form select:focus,.resa-form textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+.resa-form [aria-invalid=true]{border-color:#d92d20}
+.resa-form fieldset{border:0;display:grid;gap:8px} .resa-form legend{font-size:14px;font-weight:600;margin-bottom:6px}
+.resa-form .rad{display:flex;gap:10px;align-items:center;font-weight:400;font-size:15px}
+.resa-form .rad input{width:auto;accent-color:var(--acc)}
+.resa-form .small{font-size:13px;color:var(--muted)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.resa-form [hidden]{display:none}
+.resa-form .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px} .resa-form .seg label{display:block;position:relative}
+.resa-form .seg input{position:absolute;opacity:0;width:1px;height:1px}
+.resa-form .seg span{display:block;text-align:center;padding:13px 8px;border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;background:var(--bg)}
+.resa-form .seg input:checked+span{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.resa-form .seg input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+.resa-form .cmd{border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px;gap:10px}
+.resa-form .cmd-it{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px}
+.resa-form .qty{display:flex;align-items:center;gap:6px;flex:none}
+.resa-form .qty input{width:52px;text-align:center;padding:8px 4px;-moz-appearance:textfield}
+.resa-form .qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surf);color:var(--txt);font-size:18px;line-height:1;cursor:pointer}
+.opt{font-weight:400;color:var(--muted);font-size:13px} .opt a{color:var(--acc)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.resa-err{color:#d92d20;font-size:14px;min-height:1px}
+.resa-btn{justify-content:center;border:0;cursor:pointer;font-size:16px} .resa-btn[disabled]{opacity:.6;cursor:wait}
+.resa-ok{text-align:center;padding:40px 28px} .resa-ok .big{font-size:52px} .resa-ok h3{font-size:28px;margin:10px 0} .resa-ok p{color:var(--muted)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}
+@media(max-width:820px){.resa{grid-template-columns:1fr;gap:28px}.g2{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}nav ul{display:none}.about,.info{grid-template-columns:1fr}.about .pic{aspect-ratio:16/10}.fab{display:flex}}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration <b>non officielle</b> proposée à Hash Burger par Eyzem.</div>
+<nav><a class="logo" href="#">Hash Burger</a>
+<ul><li><a href="#histoire">Notre maison</a></li><li><a href="#carte">La carte</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#avis">Avis</a></li><li><a href="#reserver">Réserver</a></li><li><a href="#infos">Infos & accès</a></li></ul>
+<a class="btn btn-p" href="#reserver">Réserver</a></nav>
+
+<header class="hero"><div>
+<div class="kicker">Burgers artisanaux · Villeurbanne</div>
+<h1 class="logotype">Hash Burger</h1>
+<p class="slogan">Fresh is better : pain maison, sauces artisanales et produits locaux.</p>
+<div class="ctas"><a class="btn btn-p" href="#reserver">Réserver ou commander</a><a class="btn btn-g" href="tel:0668382587">📞 Appeler</a>
+<a class="btn btn-g" href="https://www.google.com/maps/place/?q=place_id:ChIJh6e2opTB9EcRw-DzD_Hgs9E" target="_blank" rel="noopener">📍 Itinéraire</a></div>
+<a class="badge" href="https://www.google.com/maps/place/?q=place_id:ChIJh6e2opTB9EcRw-DzD_Hgs9E" target="_blank" rel="noopener"><span class="bstars">★★★★★</span> 5.0/5 · 147 avis Google</a>
+</div></header>
+
+<section id="histoire"><div class="wrap about reveal">
+<div><div class="eyebrow">Notre maison</div><h2>Le burger 100 % fait maison</h2>
+<p>Chez Hash Burger, tout est fait sur place : le pain selon notre recette, les sauces artisanales, l&#x27;assemblage minute. Les produits sont frais et viennent en priorité de circuits courts.</p><p>À emporter ou dans notre petite salle voûtée au sous-sol, à deux pas des Gratte-Ciel : des recettes originales testées et validées avant d&#x27;arriver à la carte.</p>
+<ul><li>Sur place</li><li>À emporter</li><li>Fait maison</li><li>Produits locaux</li></ul></div>
+<div class="pic" role="img" aria-label="Hash Burger"></div>
+</div></section>
+
+<section id="carte" class="menu"><div class="wrap reveal">
+<div class="eyebrow">La carte</div><h2>Nos incontournables</h2>
+<div class="dishes"><article class="dish"><div class="dish-top"><h3>Burger signature</h3></div><p>Double steak, cheddar fondu et sauce maison.</p></article><article class="dish"><div class="dish-top"><h3>Burger à l&#x27;œuf</h3></div><p>Œuf coulant, oignons confits et piment doux.</p></article><article class="dish"><div class="dish-top"><h3>Frites curly</h3></div><p>Croustillantes, à partager (ou pas).</p></article><article class="dish"><div class="dish-top"><h3>Sauces artisanales</h3></div><p>Préparées chaque jour pour chaque burger.</p></article></div>
+<p class="note">Aperçu de nos plats : la carte complète et les prix seront bientôt en ligne.</p>
+</div></section>
+
+<section id="galerie"><div class="wrap reveal"><div class="eyebrow">En images</div><h2>Bienvenue chez nous</h2><div class="gallery"><a href="img/10.jpg" class="gi"><img loading="lazy" src="img/10.jpg" alt="Hash Burger – photo 1"></a><a href="img/12.jpg" class="gi"><img loading="lazy" src="img/12.jpg" alt="Hash Burger – photo 2"></a><a href="img/07.jpg" class="gi"><img loading="lazy" src="img/07.jpg" alt="Hash Burger – photo 3"></a><a href="img/01.jpg" class="gi"><img loading="lazy" src="img/01.jpg" alt="Hash Burger – photo 4"></a><a href="img/14.jpg" class="gi"><img loading="lazy" src="img/14.jpg" alt="Hash Burger – photo 5"></a><a href="img/05.jpg" class="gi"><img loading="lazy" src="img/05.jpg" alt="Hash Burger – photo 6"></a></div><p class="credit">Photos issues de la fiche Google de Hash Burger.</p></div></section>
+
+<section id="avis"><div class="wrap reveal"><div class="eyebrow">Ils en parlent</div><h2>Ce que disent nos clients</h2><div class="reviews"><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Tout est fait maison, du pain jusqu&#x27;aux sauces. Je me suis régalé. »</blockquote><figcaption>— Avis Google</figcaption></figure><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Une salle voûtée avec beaucoup de charme et à la décoration soignée. »</blockquote><figcaption>— Avis Google</figcaption></figure><figure class="review"><div class="rstars">★★★★★</div><blockquote>« Un vrai restaurant de burgers fait maison, excellent rapport qualité-prix. »</blockquote><figcaption>— Avis Google</figcaption></figure></div></div></section>
+
+<section id="reserver"><div class="wrap reveal">
+<div class="resa">
+<div class="resa-intro"><div class="eyebrow">Réservation &amp; commande</div><h2>Sur place ou à emporter</h2>
+<p>Choisissez votre créneau et vos plats : le restaurant reçoit aussitôt votre <b>ticket de commande</b> et vous confirme <b>par email</b>.</p>
+<ul class="resa-pts"><li>✓ Sur place ou à emporter</li><li>✓ Ticket envoyé directement au restaurant</li><li>✓ Uniquement les créneaux d'ouverture</li><li>✓ Gratuit, sans compte</li></ul>
+<p class="resa-tel">Une question ? <a href="tel:0668382587">📞 06 68 38 25 87</a></p></div>
+<form class="resa-form card" id="resaForm" novalidate>
+<div class="seg" role="radiogroup" aria-label="Sur place ou à emporter">
+<label><input type="radio" name="mode" value="place" checked><span>🍽️ Sur place</span></label>
+<label><input type="radio" name="mode" value="emporter"><span>🥡 À emporter</span></label>
+</div>
+<div class="g2">
+<label>Date<input type="date" name="date" id="rDate" required></label>
+<label id="rHeureL"><span>Heure</span><select name="heure" id="rHeure" required></select></label>
+</div>
+<label id="rCouv">Nombre de personnes<select name="couverts"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option><option value="9">9 personnes</option><option value="10">10 personnes</option><option value="11">11 personnes</option><option value="12">12 personnes</option></select></label>
+<fieldset class="cmd"><legend id="cmdLeg">Votre commande</legend>
+<div class="cmd-it"><span>Burger signature</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Burger signature">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Burger signature" aria-label="Quantité Burger signature"><button type="button" data-d="1" aria-label="Ajouter Burger signature">+</button></div></div><div class="cmd-it"><span>Burger à l&#x27;œuf</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Burger à l&#x27;œuf">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Burger à l&#x27;œuf" aria-label="Quantité Burger à l&#x27;œuf"><button type="button" data-d="1" aria-label="Ajouter Burger à l&#x27;œuf">+</button></div></div><div class="cmd-it"><span>Frites curly</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Frites curly">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Frites curly" aria-label="Quantité Frites curly"><button type="button" data-d="1" aria-label="Ajouter Frites curly">+</button></div></div><div class="cmd-it"><span>Sauces artisanales</span><div class="qty"><button type="button" data-d="-1" aria-label="Retirer Sauces artisanales">−</button><input type="number" min="0" max="20" value="0" inputmode="numeric" data-n="Sauces artisanales" aria-label="Quantité Sauces artisanales"><button type="button" data-d="1" aria-label="Ajouter Sauces artisanales">+</button></div></div>
+<label><span>Autre chose ? <span class="opt">(autres plats de la carte, boissons…)</span></span><textarea name="libre" rows="2" maxlength="400" placeholder="Ex. 2 menus du midi, 1 citronnade"></textarea></label>
+</fieldset>
+<div class="g2">
+<label>Nom<input name="nom" autocomplete="name" required minlength="2" maxlength="80" placeholder="Votre nom"></label>
+<label>Email<input name="email" id="rEmail" type="email" required autocomplete="email" maxlength="120" placeholder="vous@exemple.fr"></label>
+</div>
+<label><span>Message <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="500" placeholder="Allergie, poussette, anniversaire…"></textarea></label>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="rad small"><input type="checkbox" name="rgpd" required> J'accepte que ces informations soient transmises au restaurant pour traiter ma demande.</label>
+<p class="resa-err" id="rErr" role="alert"></p>
+<button class="btn btn-p resa-btn" type="submit">Envoyer ma réservation</button>
+<p class="opt">Pour un groupe de plus de 12 personnes, <a href="tel:0668382587">appelez-nous</a>.</p>
+</form>
+<div class="resa-ok card" id="resaOk" hidden></div>
+</div></div></section>
+<script>window.RESA={"ep": "https://script.google.com/macros/s/AKfycbx3AxrWF2La9J6J2zZGJla0ty9jQPYcNhw0oQApNvR2bcjneWp1al1-5xZfeM-dhhlQfA/exec", "slug": "hash-burger", "nom": "Hash Burger", "tel": "06 68 38 25 87", "h": {"1": [], "2": [[1110, 1350]], "3": [[1110, 1350]], "4": [[1110, 1350]], "5": [[1110, 1350]], "6": [[1110, 1350]], "0": [[1110, 1350]]}};</script>
+
+<section id="infos" class="menu"><div class="wrap info reveal">
+<div class="card contact"><div class="eyebrow">Infos & accès</div><h2 style="font-size:36px">Venez nous voir</h2>
+<p>📍 8 Rue du 4 Août 1789, 69100 Villeurbanne</p><p>📞 <a href="tel:0668382587">06 68 38 25 87</a></p>
+
+<table><tr><th>Lundi</th><td>Fermé</td></tr><tr><th>Mardi</th><td>18:30–22:30</td></tr><tr><th>Mercredi</th><td>18:30–22:30</td></tr><tr><th>Jeudi</th><td>18:30–22:30</td></tr><tr><th>Vendredi</th><td>18:30–22:30</td></tr><tr><th>Samedi</th><td>18:30–22:30</td></tr><tr><th>Dimanche</th><td>18:30–22:30</td></tr></table>
+<a class="btn btn-p" href="tel:0668382587">Appeler</a><a class="btn btn-p" style="background:var(--acc2)" href="https://www.google.com/maps/place/?q=place_id:ChIJh6e2opTB9EcRw-DzD_Hgs9E" target="_blank" rel="noopener">Itinéraire</a>
+</div>
+<iframe loading="lazy" src="https://www.google.com/maps?q=Hash%20Burger%208%20Rue%20du%204%20Ao%C3%BBt%201789%2C%2069100%20Villeurbanne&amp;output=embed" title="Plan d'accès Hash Burger"></iframe>
+</div></section>
+
+<footer>© Hash Burger · 8 Rue du 4 Août 1789, 69100 Villeurbanne<br>Site réalisé par Eyzem</footer>
+<a class="fab" href="#reserver">Réserver / Commander</a>
+<div class="lb" id="lb"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gi').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();lb.querySelector('img').src=a.getAttribute('href');lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+(function(){
+const C=window.RESA,f=document.getElementById('resaForm');if(!C||!f)return;
+const dI=document.getElementById('rDate'),hS=document.getElementById('rHeure'),eI=document.getElementById('rEmail'),err=document.getElementById('rErr'),ok=document.getElementById('resaOk');
+const SERV=[[690,840],[1110,1320]],DEF=[[690,870],[1110,1350]];
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const hm=m=>String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+function slots(d){let pl=C.h[d.getDay()];if(pl===undefined||pl===null)pl=DEF;const out=[];
+ const now=new Date(),today=iso(now)===iso(d),minM=today?now.getHours()*60+now.getMinutes()+60:0;
+ pl.forEach(([a,b])=>SERV.forEach(([s,t])=>{for(let m=Math.ceil(Math.max(a,s)/15)*15;m<=Math.min(b-30,t);m+=15)if(m>=minM&&!out.includes(m))out.push(m)}));
+ return out.sort((x,y)=>x-y)}
+function fill(){const v=dI.value;hS.innerHTML='';if(!v)return;const d=new Date(v+'T12:00');const s=slots(d);
+ if(!s.length){hS.innerHTML='<option value="">Fermé ou complet ce jour-là</option>';hS.disabled=true;return}
+ hS.disabled=false;let midi=s.filter(m=>m<960),soir=s.filter(m=>m>=960);
+ const g=(l,lab)=>l.length?'<optgroup label="'+lab+'">'+l.map(m=>'<option>'+hm(m)+'</option>').join('')+'</optgroup>':'';
+ hS.innerHTML=g(midi,'Midi')+g(soir,'Soir')}
+const t0=new Date(),max=new Date();max.setDate(max.getDate()+60);dI.min=iso(t0);dI.max=iso(max);
+for(let i=0;i<14;i++){const d=new Date();d.setDate(d.getDate()+i);if(slots(d).length){dI.value=iso(d);break}}
+fill();dI.addEventListener('change',fill);
+const cv=document.getElementById('rCouv'),leg=document.getElementById('cmdLeg'),hL=document.getElementById('rHeureL').firstChild,btn=f.querySelector('button[type=submit]');
+const emp=()=>f.mode.value==='emporter',lab=()=>emp()?'Envoyer ma commande':'Envoyer ma réservation';
+function sync(){const x=emp();cv.hidden=x;f.couverts.disabled=x;hL.textContent=x?'Heure de retrait':'Heure d’arrivée';btn.textContent=lab();
+ leg.innerHTML=x?'Votre commande':'Votre commande <span class="opt">(facultatif, préparée pour votre arrivée)</span>'}
+f.querySelectorAll('[name=mode]').forEach(x=>x.addEventListener('change',sync));sync();
+f.querySelectorAll('.qty button').forEach(b=>b.addEventListener('click',()=>{const i=b.parentNode.querySelector('input');i.value=Math.max(0,Math.min(20,(parseInt(i.value,10)||0)+ +b.dataset.d))}));
+function cmd(){const l=[];f.querySelectorAll('.qty input').forEach(i=>{const q=Math.max(0,Math.min(20,parseInt(i.value,10)||0));if(q)l.push(q+' × '+i.dataset.n)});
+ const t=f.libre.value.trim();if(t)l.push(t);return l.join('\n')}
+const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function check(){let m='';f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
+ const bad=(el,msg)=>{el.setAttribute('aria-invalid','true');if(!m){m=msg;el.focus()}};
+ if(!dI.value||dI.value<dI.min||dI.value>dI.max)bad(dI,'Choisissez une date dans les 60 prochains jours.');
+ if(!hS.value)bad(hS,'Aucun créneau ce jour-là : choisissez une autre date.');
+ if(f.nom.value.trim().length<2)bad(f.nom,'Indiquez votre nom.');
+ if(eI.value&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(eI.value))bad(eI,'Adresse email invalide.');
+ if(!eI.value)bad(eI,'Indiquez votre email pour recevoir la confirmation.');
+ if(emp()&&!cmd())bad(f.libre,'Ajoutez au moins un plat à votre commande.');
+ if(!f.rgpd.checked)bad(f.rgpd,'Merci de cocher la case d’accord.');
+ err.textContent=m;return !m}
+f.addEventListener('submit',async ev=>{ev.preventDefault();if(!check())return;
+ const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Envoi en cours…';
+ const fd=new FormData(f);fd.delete('libre');fd.append('commande',cmd());fd.append('slug',C.slug);fd.append('resto_tel',C.tel||'');
+ let res={ok:true,demo:true};
+ try{if(C.ep){const rq=await fetch(C.ep,{method:'POST',body:new URLSearchParams(fd)});res=await rq.json()}else await new Promise(r=>setTimeout(r,700))}
+ catch(x){res={ok:false,error:'Connexion impossible. Réessayez ou appelez le restaurant.'}}
+ b.disabled=false;b.textContent=lab();
+ if(!res.ok){err.textContent=res.error||'Erreur, réessayez.';return}
+ const d=new Date(fd.get('date')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+ const n=fd.get('couverts'),c=fd.get('commande');
+ ok.innerHTML='<div class="big">✅</div><h3>'+(emp()?'Commande envoyée !':'Réservation envoyée !')+'</h3><p>'+(emp()?'<b>À emporter</b>, retrait ':'<b>Sur place, '+n+' personne'+(n>1?'s':'')+'</b>, ')+d+' à <b>'+fd.get('heure')+'</b>.</p>'+
+  (c?'<p style="white-space:pre-line">'+esc(c)+'</p>':'')+'<p>'+
+  'Un email de confirmation vous sera envoyé à '+esc(fd.get('email'))+' dès que le restaurant aura validé.'+'</p>'+
+  (!res.demo?'':'<p class="opt" style="margin-top:14px">Maquette de démonstration : cette demande n’est pas transmise au restaurant. Pour réserver, appelez-le directement.</p>');
+ f.hidden=true;ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'})});
+})();
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>

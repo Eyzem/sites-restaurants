@@ -4,9 +4,24 @@ Maquettes de sites vitrines réalisées par **Eyzem** pour des restaurants qui n
 
 > ⚠️ **Liens temporaires de démonstration.** Ces pages sont des maquettes **non officielles**, non indexées par les moteurs de recherche (`noindex`), présentées aux restaurateurs avant la mise en ligne de leur vrai site sur leur propre nom de domaine. Elles ne représentent pas les établissements et peuvent être retirées à tout moment, notamment sur simple demande du restaurant.
 
-**10 maquettes** · 10 à contacter · mise à jour le 12 novembre 2026
+**20 maquettes** · 20 à contacter · mise à jour le 15 novembre 2026
 
 ## 📋 Les restaurants
+
+### Semaine du 15 novembre 2026
+
+| | Restaurant | Cuisine | Note Google | Adresse | Maquette | Devis |
+|---|---|---|---|---|---|---|
+| 1 | **Hash Burger** | Burgers artisanaux | ⭐ 5.0 (147 avis) | 8 Rue du 4 Août 1789, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/hash-burger/) | [PDF](https://eyzem.github.io/sites-restaurants/hash-burger/devis.pdf) |
+| 2 | **Florya Grill** | Restaurant turc & grillades | ⭐ 4.9 (826 avis) | 63 Route de Genas, 69120 Vaulx-en-Velin | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/florya-grill/) | [PDF](https://eyzem.github.io/sites-restaurants/florya-grill/devis.pdf) |
+| 3 | **Saveurs d'Atlas** | Tajines, grillades & brunch maghrébin | ⭐ 4.9 (200 avis) | 143 Cours Tolstoï, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/saveurs-d-atlas/) | [PDF](https://eyzem.github.io/sites-restaurants/saveurs-d-atlas/devis.pdf) |
+| 4 | **Tandoori Delights** | Cuisine indienne halal | ⭐ 4.9 (85 avis) | 66 Rue Léon Blum, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/tandoori-delights/) | [PDF](https://eyzem.github.io/sites-restaurants/tandoori-delights/devis.pdf) |
+| 5 | **Armen Restaurant** | Cuisine arménienne & géorgienne | ⭐ 4.8 (781 avis) | 6 Rue Melzet, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/armen-restaurant/) | [PDF](https://eyzem.github.io/sites-restaurants/armen-restaurant/devis.pdf) |
+| 6 | **Pizzeria Chez Mima** | Pizzeria halal | ⭐ 4.8 (104 avis) | 33 Rue Louis Goux, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/pizzeria-chez-mima/) | [PDF](https://eyzem.github.io/sites-restaurants/pizzeria-chez-mima/devis.pdf) |
+| 7 | **Sweet Villeurbanne** | Crêperie & desserts premium | ⭐ 4.8 (1807 avis) | 3 Avenue de la Rize, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/sweet-villeurbanne/) | [PDF](https://eyzem.github.io/sites-restaurants/sweet-villeurbanne/devis.pdf) |
+| 8 | **H Restaurant Lounge** | Restaurant méditerranéen & lounge | ⭐ 4.7 (528 avis) | 80 Rue Magenta, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/h-restaurant-lounge/) | [PDF](https://eyzem.github.io/sites-restaurants/h-restaurant-lounge/devis.pdf) |
+| 9 | **P'tit Bistroy** | Café-comptoir, bistrot & pizzas | ⭐ 4.5 (383 avis) | 44 Avenue Marc Sangnier, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/ptit-bistroy/) | [PDF](https://eyzem.github.io/sites-restaurants/ptit-bistroy/devis.pdf) |
+| 10 | **La Baie d'Halong** | Restaurant vietnamien | ⭐ 4.4 (315 avis) | 1 Place des Maisons Neuves, 69100 Villeurbanne | [Voir le site ↗](https://eyzem.github.io/sites-restaurants/la-baie-d-halong/) | [PDF](https://eyzem.github.io/sites-restaurants/la-baie-d-halong/devis.pdf) |
 
 ### Semaine du 9 novembre 2026
 
